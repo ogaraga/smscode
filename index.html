@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS VERIFICATION</title>
+    <link rel="stylesheet" href="sms.css">
+</head>
+<body>
+    <h1 class="heading">PHONE-SMS VERIFICATION METHOD</h1>
+    <div class="send-container">
+        <input type="tel" name="phone" id="phone" placeholder="Enter your phone #">
+        <label style="margin: auto;" id="loading"></label>
+        <input type="button" name="verify" id="verify" value="VERIFY PHONE #">
+        <label style="margin: auto;" id="code-sent"></label>
+        
+    </div>
+    <div class="verify-container">
+        <input type="number" name="code" id="code" placeholder=" code #" readonly>
+        <span id="time"></span>
+        <span style="margin: 3px auto;" id="login"></span>
+        <input type="submit" name="verify" id="verify2" value="VALIDATE CODE">
+        <span style="margin: 5px auto;" id="code-verified"></span>
+        
+    </div>
+
+    <script src="sms.js"></script>
+</body>
+</html>
