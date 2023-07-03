@@ -26,7 +26,9 @@ let cI = setInterval(() => {
 
     }
     else {
-        return false;
+        timer !== 0;
+        code.value !== "";
+        validateCode.value = "VALIDATE CODE";
     }
 
 }, 1000);
@@ -37,7 +39,7 @@ window.addEventListener("load", () => {
 
     verifyTel.addEventListener("click", (e) => {
         e.preventDefault();
-        if (phone.value != "" && phone.value.length > 9 && phone.value.length < 12) {
+        if (phone.value != "" && phone.value.length > 9 && phone.value.length < 12 && !(isNaN(phone.value))) {
             notify.style.color = "green";
             loadingPage.textContent = "Code Page loading . . .";
             loadingPage.style.color = "blue";
@@ -118,7 +120,7 @@ window.addEventListener("load", () => {
                         if (isNaN(inputField.value.trim()) != "" && isNaN(inputField2.value.trim())
                             != "" && inputField2.value.indexOf("@") != -1 && inputField2.value.indexOf(".") != -1 && userInput.value.trim() ===
                             userId.textContent.trim().slice(-9)) {
-                            form.innerHTML = "Congratulations, You have successfully logged in!"
+                            form.innerHTML = `<span style="color: aqua; background-color: whitesmoke;">Dear ${inputField.value.trim().toUpperCase()},</span><br>Congrats, You have successfully logged in!<br><span style="color: coral;"> Your reference #</span><span style="color: blue; font-size: 12px;">${inputField.value.trim().slice(-3).toUpperCase()}${userId.textContent.trim().slice(-6)}</span>`;
                             form.style.color = "green";
                             form.style.backgroundColor = "white";
                             captionz.textContent = "S U C C E S S !";
